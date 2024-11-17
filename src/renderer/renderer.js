@@ -1,11 +1,8 @@
-const { ipcRenderer } = require('electron');
-
-
 
 // Use the exposed API from preload.js
 window.electron.ipcRenderer.on('stats-update', (_, stats) => {
     console.log('Stats received in renderer:', stats);
-    document.getElementById('cpu-temp').innerText = `CPU Temperature: ${stats.cpu.temperature}`;
+    document.getElementById('cpu-temp').innerText = `${stats.cpu.temperature}`;
     document.getElementById('cpu-load').innerText = `CPU Load: ${stats.cpu.load}`;
     document.getElementById('cpu-power').innerText = `CPU Power: ${stats.cpu.power}`;
     

@@ -4,31 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="./output.css">
 
     <title>Widget App</title>
+    
 </head>
 <body>
    
-    <div>
-        <h1>System Widget</h1>
-        <p id="cpu-temp">Loading CPU Temperature...</p>
-        <p id="cpu-load">Loading CPU Load...</p>
-        <p id="cpu-power">Loading CPU Power...</p>
-
-        <p id="gpu-temp">Loading GPU Temp...</p>
-        <p id="gpu-load">Loading GPU Load...</p>
-        <p id="gpu-fan">Loading GPU Fan...</p>
-        <p id="gpu-power">Loading GPU Power...</p>
-        <p id="gpu-memory-free">Loading GPU Mem Free...</p>
-        <p id="gpu-memory-used">Loading GPU Mem Used...</p>
-
-        <p id="memory-load">Loading Memory Load...</p> 
-    <p id="used-memory">Loading Used Memory...</p> 
+    <div class="flex space-x-2">
+        <div class="p-2 rounded-md bg-custom-dark flex-3">
+          <p class="font-sans text-xs text-gray-500">CPU TEMP</p>
+          <p class="font-sans font-bold text-2xl text-white" id="cpu-temp"></p>
+        </div>
+        <div>
+            <p id="cpu-load">Loading CPU Load...</p>
+        </div>
+        <div>
+            <p id="cpu-power">Loading CPU Power...</p>
+        </div>
+        <div>
+            <p id="gpu-temp">Loading GPU Temp...</p>
+        </div>
+        <div>
+            <p id="gpu-load">Loading GPU Load...</p>
+        </div>
+        <div>
+            <p id="gpu-fan">Loading GPU Fan...</p>
+        </div>
+        <div>
+            <p id="gpu-power">Loading GPU Power...</p>
+        </div>
+        <div>
+            <p id="gpu-memory-free">Loading GPU Mem Free...</p>
+        </div>
+        <div>
+            <p id="gpu-memory-used">Loading GPU Mem Used...</p>
+        </div>
+        <div>
+            <p id="memory-load">Loading Memory Load...</p> 
+        </div>
+        <div>
+            <p id="used-memory">Loading Used Memory...</p>
+        </div>
+        
+ 
     </div>
-
+    
+    
     <!--  link to the renderer.js -->
     <script src="renderer.js"></script>
+
 
 </body>
 </html>

@@ -1,7 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const http = require('http');
 const path = require('path');
-const { ipcMain } = require('electron');
 
 let mainWindow;
 
@@ -101,7 +100,7 @@ const fetchData = () => {
 
                 // Update the UI in the renderer process with the collected data
                 if (cpuPackageTemp && cpuTotalLoad && cpuPower && memoryLoad && usedMemory) {
-               
+                    
                     mainWindow.webContents.send('stats-update', {
                         cpu: {
                             temperature: cpuPackageTemp.Value,
