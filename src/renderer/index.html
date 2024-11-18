@@ -10,45 +10,75 @@
     
 </head>
 <body>
-   
-    <div class="flex space-x-2">
-        <div class="p-2 rounded-md bg-custom-dark flex-3">
-          <p class="font-sans text-xs text-gray-500">CPU TEMP</p>
-          <p class="font-sans font-bold text-2xl text-white" id="cpu-temp"></p>
-        </div>
-        <div>
-            <p id="cpu-load">Loading CPU Load...</p>
-        </div>
-        <div>
-            <p id="cpu-power">Loading CPU Power...</p>
-        </div>
-        <div>
-            <p id="gpu-temp">Loading GPU Temp...</p>
-        </div>
-        <div>
-            <p id="gpu-load">Loading GPU Load...</p>
-        </div>
-        <div>
-            <p id="gpu-fan">Loading GPU Fan...</p>
-        </div>
-        <div>
-            <p id="gpu-power">Loading GPU Power...</p>
-        </div>
-        <div>
-            <p id="gpu-memory-free">Loading GPU Mem Free...</p>
-        </div>
-        <div>
-            <p id="gpu-memory-used">Loading GPU Mem Used...</p>
-        </div>
-        <div>
-            <p id="memory-load">Loading Memory Load...</p> 
-        </div>
-        <div>
-            <p id="used-memory">Loading Used Memory...</p>
+    
+    <div class="flex flex-row flex-nowrap justify-start items-start gap-[15px]">
+
+        <div class="p-2 rounded-xl bg-custom-dark w-[250px] h-[120px] self-auto shadow-[inset_70px_-120px_50px_-100px_rgba(128,0,128,0.5)]">
+            <p class="font-sans text-xs text-gray-500">CPU TEMP</p>
+            <p class="font-sans font-bold text-2xl text-white mb-4" id="cpu-temp">0°C</p>
+            
+            <!-- 10% Text at the top -->
+            <div class="text-xs text-white" id="cpu-temp-percentage">0%</div>
+            
+            <!-- Progress bar container -->
+            <div class="bg-purple-500/20 h-4 rounded-full overflow-hidden">
+                <div id="progress-bar" class="bg-purple-500 h-full shadow-xl"></div>
+            </div>
         </div>
         
- 
+        
+        <div class="p-2 rounded-xl bg-custom-dark w-[250px] h-[120px] self-auto">
+            <p class="font-sans text-xs text-gray-500">CPU LOAD</p>
+            <p class="font-sans font-bold text-2xl text-white mb-4" id="cpu-load">0°C</p>
+            
+            <!-- 10% Text at the top -->
+            <div class="text-xs text-white" id="cpu-load-percentage">0%</div>
+            
+            <!-- Progress bar container -->
+            <div class="bg-purple-500/20 h-4 rounded-full overflow-hidden">
+                <div id="progress-bar-cpuload" class="bg-purple-500 h-full shadow-xl"></div>
+            </div>
+        </div>
+
+        <div class="p-2 rounded-xl bg-custom-dark w-[250px] h-[120px] self-auto">
+            <p class="font-sans text-xs text-gray-500">CPU POW</p>
+            <p class="font-sans font-bold text-2xl text-white mb-4" id="cpu-power">0 W</p>
+            
+            <!-- 10% Text at the top -->
+            <div class="text-xs text-white" id="cpu-power-watts">0W</div>
+            
+            <!-- Progress bar container -->
+            <div class="bg-purple-500/20 h-4 rounded-full overflow-hidden">
+                <div id="progress-bar-cpupower" class="bg-purple-500 h-full shadow-xl"></div>
+            </div>
+        </div>
+
+        <div class="w-[150px] h-[150px] self-auto">
+            <p id="gpu-temp">Loading GPU Temp...</p>
+        </div>
+        <div class="w-[150px] h-[150px] self-auto">
+            <p id="gpu-load">Loading GPU Load...</p>
+        </div>
+        <div class="w-[150px] h-[150px] self-auto">
+            <p id="gpu-fan">Loading GPU Fan...</p>
+        </div>
+        <div class="w-[150px] h-[150px] self-auto">
+            <p id="gpu-power">Loading GPU Power...</p>
+        </div>
+        <div class="w-[150px] h-[150px] self-auto">
+            <p id="gpu-memory-free">Loading GPU Mem Free...</p>
+        </div>
+        <div class="w-[150px] h-[150px] self-auto">
+            <p id="gpu-memory-used">Loading GPU Mem Used...</p>
+        </div>
+        <div class="w-[150px] h-[150px] self-auto">
+            <p id="memory-load">Loading Memory Load...</p>
+        </div>
+        <div class="w-[150px] h-[150px] self-auto">
+            <p id="used-memory">Loading Used Memory...</p>
+        </div>
     </div>
+    
     
     
     <!--  link to the renderer.js -->
