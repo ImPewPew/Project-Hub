@@ -7,7 +7,7 @@ let mainWindow;
 // Function to create the window
 const createWindow = () => {
     mainWindow = new BrowserWindow({
-        width: 800,
+        width: 1000,
         height: 600,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'), // Path to your preload script
@@ -42,11 +42,13 @@ const fetchData = () => {
 
         res.on('end', () => {
             try {
+                
                 const jsonData = JSON.parse(data);
+                
                 let cpuPackageTemp = null, cpuTotalLoad = null, cpuPower = null;
                 let gpuCoreTemp = null, gpuLoad = null, gpuFanSpeed = null, gpuPower = null, gpuMemoryFree = null, gpuMemoryUsed = null;
                 let memoryLoad = null, usedMemory = null; // New variables for memory
-
+                
                 const findValues = (item) => {
                     // CPU Data
                     if (item.Text === "Temperatures") {

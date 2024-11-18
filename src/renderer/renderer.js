@@ -38,7 +38,7 @@ window.electron.ipcRenderer.on('stats-update', (_, stats) => {
 
 
     // Other stats updates
-    document.getElementById('gpu-temp').innerText = `GPU Temperature: ${stats.gpu.temperature || 'N/A'}`;
+    document.getElementById('gpu-temp').innerText = `${stats.gpu.temperature || 'N/A'}`;
     document.getElementById('gpu-load').innerText = `GPU Load: ${stats.gpu.load || 'N/A'}`;
     document.getElementById('gpu-fan').innerText = `GPU Fan Speed: ${stats.gpu.fanSpeed || 'N/A'}`;
     document.getElementById('gpu-power').innerText = `GPU Power: ${stats.gpu.power || 'N/A'}`;

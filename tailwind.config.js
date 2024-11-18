@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'custom-dark': '#141010', // Add your custom color here
+        'custom-white': '#fcfefe',
       },
     },
   },
