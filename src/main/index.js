@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain} = require('electron');
 const http = require('http');
 const path = require('path');
 
@@ -7,22 +7,44 @@ let mainWindow;
 // Function to create the window
 const createWindow = () => {
     mainWindow = new BrowserWindow({
-        width: 1000,
-        height: 600,
+        width: 350,
+        height: 1080,
+        frame: false,
+        transparent: true,
+        alwaysOnTop: true,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'), // Path to your preload script
-             contextIsolation: true,
+            contextIsolation: true,
             nodeIntegration: false,
         }
     });
 
     mainWindow.loadFile(path.join(__dirname, '../renderer/index.html'));
+
+    // Ensure you are referring to the mainWindow here
+    mainWindow.once('ready-to-show', () => {
+        mainWindow.webContents.insertCSS(`
+            body {
+            -webkit-app-region: drag;  /* Allow dragging of the window */
+        }
+        #close-btn {
+            -webkit-app-region: no-drag;  /* Prevent the close button from being dragged */
+        }
+        `);
+        mainWindow.show();  
+    });
+
 };
 
 // Electron app ready event
 app.whenReady().then(() => {
     createWindow();
     setInterval(fetchData, 1000);
+});
+
+ipcMain.on('app-close', () => {
+    console.log('app-close event received in main process');
+    app.quit();
 });
 
 app.on('window-all-closed', () => {
