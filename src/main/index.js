@@ -18,8 +18,9 @@ const createWindow = () => {
             nodeIntegration: false,
         }
     });
-
+    
     mainWindow.loadFile(path.join(__dirname, '../renderer/index.html'));
+
 
     // Ensure you are referring to the mainWindow here
     mainWindow.once('ready-to-show', () => {
@@ -31,6 +32,16 @@ const createWindow = () => {
             -webkit-app-region: no-drag;  /* Prevent the close button from being dragged */
         }
         `);
+
+        // Resize window to fit content dynamically
+        mainWindow.webContents.executeJavaScript(`
+            const body = document.body;
+            const width = body.scrollWidth;
+            const height = body.scrollHeight;
+            ({ width, height });
+        `).then(({ width, height }) => {
+            mainWindow.setContentSize(width, height);
+        });
         mainWindow.show();  
     });
 
