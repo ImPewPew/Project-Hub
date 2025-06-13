@@ -91,16 +91,15 @@ window.electron.ipcRenderer.on('stats-update', (_, stats) => {
 
    // Extract memory free in MB as a string
     const memoryFreeMB = stats.gpu.memoryFree || 'N/A';
-    // Check if memoryFreeMB is not 'N/A' and parse it
+   
     let memoryFreeGB = memoryFreeMB !== 'N/A' ? (parseFloat(memoryFreeMB) / 1024).toFixed(2) : memoryFreeMB;
     document.getElementById('gpu-memory-free').innerText = memoryFreeGB !== 'N/A' ? `${memoryFreeGB} GB` : memoryFreeMB;
 
     
     
-    // Other stats updates
-    // Extract memory free in MB as a string
+    
     const memoryUsedMB = stats.gpu.memoryUsed || 'N/A';
-    // Check if memoryFreeMB is not 'N/A' and parse it
+   
     let memoryUsedGB = memoryUsedMB !== 'N/A' ? (parseFloat(memoryUsedMB) / 1024).toFixed(2) : memoryUsedMB;
     document.getElementById('gpu-memory-used').innerText = memoryUsedGB !== 'N/A' ? `${memoryUsedGB} GB` : memoryUsedGB;
 

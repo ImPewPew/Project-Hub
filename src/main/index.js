@@ -13,7 +13,7 @@ const createWindow = () => {
         transparent: true,
         alwaysOnTop: true,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js'), // Path to your preload script
+            preload: path.join(__dirname, 'preload.js'), 
             contextIsolation: true,
             nodeIntegration: false,
         }
@@ -133,7 +133,7 @@ const fetchData = () => {
 
                 findValues(jsonData);
 
-                // Update the UI in the renderer process with the collected data
+               
                 if (cpuPackageTemp && cpuTotalLoad && cpuPower && memoryLoad && usedMemory) {
                     
                     mainWindow.webContents.send('stats-update', {
