@@ -67,7 +67,7 @@ Smooth, low-overhead visuals keep it lightweight and usable while multitasking.
 
 ✨ Author
 Built with 💻 by Emmanuel B
-Part of my personal developer toolkit and development portfolio.
+Part of my personal development portfolio.
 
 ---
 
